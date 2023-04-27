@@ -1,0 +1,50 @@
+@import '../../main';
+
+.main {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: #0B2447;
+
+
+    .title {
+        color: $movieTitle;
+        margin-top: 30px;
+        margin-left: 50px;
+        
+    }
+}
+
+.container {
+    max-width:1690px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    @media screen and (max-width:768px) {
+        & {
+            margin-left: 0;
+        }
+    }
+    .image-cover {
+        width: 100%;
+        height: 80%;
+        border-radius: 8px;
+        background-size: cover;
+    }
+
+    .box-title {
+        margin-top: 10px;
+        color: #2F58CD;
+    }
+
+    .box {
+        margin: 10px;
+        width: 400px;
+        height: 300px;
+    }
+}

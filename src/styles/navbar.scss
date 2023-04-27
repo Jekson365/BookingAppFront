@@ -1,0 +1,110 @@
+@import url("//cdn.web-fonts.ge/fonts/alk-rounded-mtav-med/css/alk-rounded-mtav-med.min.css");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    font-family: "ALK Rounded Mtav Med", sans-serif;
+}
+
+body {
+    background-color: #F0F0F0;
+    height: 100vh;
+    position: relative;
+}
+
+.toggle-button {
+    position: absolute;
+    left: 270px;
+    width: 50px;
+    top: 50px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background-color: #F45050;
+    box-shadow: -5px 0px 1px 0.1px rgba(0, 0, 0, 0.397);
+    cursor: pointer;
+}
+.active-bar {
+    left: -250px !important;
+    transition: 0.3s;
+}
+.rot-button {
+    transform: rotateZ(180deg);
+}
+
+.side-bar {
+    transition: 0.3s;
+    left: 0px;
+    box-shadow: 0px 20px 110px 0.1px rgba(0, 0, 0, 0.507);
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    background-color: #3C486B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .side-bar-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 90%;
+        width: 80%;
+        margin: 0 auto;
+
+        ul {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                margin-top: 20px;
+                font-size: 25px;
+                color: white;
+                text-decoration: none;
+                width: 0%;
+                height: fit-content;
+                transition: 0.3s;
+                position: relative;
+                z-index: 3;
+                &::after {
+
+                    z-index: -1;
+                    transition: 0.3s;
+                    content: "";
+                    position: absolute;
+                    left: -10px;
+                    top: 0;
+                    border-radius: 20px;
+                    height: 100%;
+                    width: 3px;
+                    background-color: #F45050;
+                }
+                &:hover::after {
+                    width: 200px;
+                }
+            }
+        }
+
+        .log-out {
+            margin-bottom: 50px;
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 25px;
+            }
+        }
+    }
+
+}
