@@ -5,7 +5,7 @@ import { Detailed } from './Detailed'
 import { useState } from 'react'
 
 export const Movie = () => {
-    const [detailed, setDetatild] = useState<object>()
+
     const Movies = [
         {
             name: "Globe: The Tempset",
@@ -65,12 +65,21 @@ export const Movie = () => {
         }
     ]
 
+    
+    const [detailed, setDetatild] = useState<object>()
+    const [activeDetailed, setActiveDetailed] = useState<boolean>(false)
+
+
     const detailedMovie = (detailedMovie: Object) => {
         setDetatild(detailedMovie)
+        setActiveDetailed(true)
+    }
+    const deActive = () => {
+        setActiveDetailed(false)
     }
     return (
         <>
-            <Detailed detMovie={detailed} />
+            <Detailed detMovie={detailed} isActive={activeDetailed} deActive={deActive} activeStatus={activeDetailed} />
             <div className='main'>
                 <div className="title">
                     <h1>ფილმები</h1>
@@ -79,7 +88,7 @@ export const Movie = () => {
                     {Movies.map((each) => {
                         return (
                             <div onClick={() => detailedMovie(each)}>
-                                <EachMovie data={each} />
+                                <EachMovie data={each}  />
                             </div>
                         )
                     })}

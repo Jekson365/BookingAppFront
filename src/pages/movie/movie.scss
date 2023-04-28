@@ -1,5 +1,7 @@
 @import '../../main';
-
+* {
+    transition: 0.3s;
+}
 .main {
     position: absolute;
     top: 0;
@@ -67,15 +69,35 @@
     left: 50%;
     width: 50%;
     height: 600px;
-    background-color: red;
+    background-color: #0B2447;
+    box-shadow: 0 0 40px 0.1px rgba(0, 0, 0, 0.452);
     border-radius: 20px;
     z-index: 10;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateY(-200%);
     padding: 20px;
+    opacity: 0;
+
     .detailed-image {
         width: 100%;
         height: 80%;
         background-size: cover;
         border-radius: 15px;
     }
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.458);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:9;
+    display: none;
+}
+.overlay-active {
+    display: block;
+}
+.active-detailed {
+    opacity: 1;
+    transform: translate(-50%, -50%);
 }
