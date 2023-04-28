@@ -14,37 +14,68 @@
         color: $movieTitle;
         margin-top: 30px;
         margin-left: 50px;
-        
+
     }
 }
 
 .container {
-    max-width:1690px;
+    max-width: 1690px;
     margin-left: 50px;
     display: flex;
     align-items: center;
     justify-content: start;
     flex-wrap: wrap;
+
     @media screen and (max-width:768px) {
         & {
             margin-left: 0;
         }
     }
+
     .image-cover {
         width: 100%;
         height: 80%;
         border-radius: 8px;
+        // background-size: cover;
+        transition: 0.3s;
+        background-position: center center;
         background-size: cover;
+
+        &:hover {
+
+            transform: scale(1.05);
+        }
     }
 
     .box-title {
         margin-top: 10px;
-        color: #2F58CD;
+        color: white;
     }
 
     .box {
         margin: 10px;
         width: 400px;
         height: 300px;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+}
+
+.detailed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 600px;
+    background-color: red;
+    border-radius: 20px;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    .detailed-image {
+        width: 100%;
+        height: 80%;
+        background-size: cover;
+        border-radius: 15px;
     }
 }
