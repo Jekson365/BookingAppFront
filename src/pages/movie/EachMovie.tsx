@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 
 export const EachMovie = (data: any) => {
   return (

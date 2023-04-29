@@ -45,6 +45,7 @@ body {
 .side-bar {
     transition: 0.3s;
     left: 0px;
+    z-index: 100;
     box-shadow: 0px 20px 110px 0.1px rgba(0, 0, 0, 0.507);
     position: absolute;
     width: 300px;

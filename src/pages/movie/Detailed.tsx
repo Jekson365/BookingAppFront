@@ -1,23 +1,34 @@
-import React from 'react'
-import { useEffect } from 'react'
+import { FC } from 'react'
 
-export const Detailed = (data: Object) => {
-  useEffect(() => {
-    console.log(data)
-  })
+
+type props = {
+  detMovie: any,
+  isActive: boolean,
+  deActive: any,
+  activeStatus: boolean
+}
+
+export const Detailed: FC<props> = ({ detMovie, deActive, activeStatus }) => {
 
   return (
     <>
       <div
-        onClick={() => data.deActive(false)}
-        className={`overlay ${!data.activeStatus ? "" : 'overlay-active'}`
+        onClick={() => deActive(false)}
+        className={`overlay ${!activeStatus ? "" : 'overlay-active'}`
         }></div>
-      <div className={`detailed ${data.activeStatus ? 'active-detailed' : ""}`}>
+      <div className={`detailed ${activeStatus ? 'active-detailed' : ""}`}>
         <div className="detailed-image"
-        style={{ "backgroundImage": `url('${data.activeStatus ? data.detMovie.img : ""}')` }}
+          style={{ "backgroundImage": `url('${activeStatus ? detMovie.img : ""}')` }}
         ></div>
         <div className="description">
-          <h1>{data.activeStatus ? data.detMovie.name : ""}</h1>
+          <h1>{activeStatus ? detMovie.name : ""}</h1>
+          <p>ჟანრი: <span className='val'>{detMovie?.genre}</span></p>
+          <p>როლებში: <span className='val'>{detMovie?.roles}</span></p>
+          <p>აღწერა: <span className='val'>{detMovie?.description}</span></p>
+          <p>პრემიერა: <span className='val'>{detMovie?.date}</span></p>
+        </div>
+        <div className="actions-buttons">
+          <button>დაჯავშნა</button>
         </div>
       </div>
     </>

@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { Movie } from './pages/movie/Movie'
 
-function App() {
+function App () {
 
   return (
     <>

@@ -1,11 +1,9 @@
-import { EachMovie } from './EachMovie'
-import './movie.scss'
-import { Detailed } from './Detailed'
-import { useState } from 'react'
-import { PopularMovies } from './PopularMovies'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
-export const Movie = () => {
 
+
+export const PopularMovies = () => {
     const Movies = [
         {
             name: "Globe: The Tempset",
@@ -68,43 +66,30 @@ export const Movie = () => {
             img: "https://static.tkt.ge/img/8ec08a56-169d-473c-9b6a-ccb44c594e8d.jpeg"
         }
     ]
-
-
-    const [detailed, setDetatild] = useState<object>()
-    const [activeDetailed, setActiveDetailed] = useState<boolean>(false)
-
-
-    const deActive = () => {
-        setActiveDetailed(false)
-    }
-    const detailedMovie = (detailedMovie: Object) => {
-        setDetatild(detailedMovie)
-        setActiveDetailed(true)
-    }
     return (
         <>
-            <Detailed detMovie={detailed} isActive={activeDetailed} deActive={deActive} activeStatus={activeDetailed} />
-            <div className='main'>
-                <div className="title">
-                    <h1>პოპულარული</h1>
-                </div>
-                <div className="main-slider">
-                    <PopularMovies />
-                </div>
-                <div className="title">
-                    <h1>ფილმები</h1>
-                </div>
-                <div className="container">
-                    {Movies.map((each) => {
-                        return (
-                            <div onClick={() => detailedMovie(each)}>
-                                <EachMovie data={each} />
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-        </>
 
+            <Swiper
+                spaceBetween={50}
+                slidesPerView={2}
+                autoplay={{
+                    delay: 1500,
+                }}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+            >
+                {Movies.map((each, index) => {
+                    return (
+                        <>
+                            <SwiperSlide
+                                key={index}
+                                style={{ "backgroundImage": `url('${each?.img}')` }}
+                            >.
+                            </SwiperSlide>
+                        </>
+                    )
+                })}
+            </Swiper>
+        </>
     )
 }
