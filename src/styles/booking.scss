@@ -1,0 +1,80 @@
+.main-booking {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-left: 50px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booking-section {
+    width: 80vw;
+    display: grid;
+    height: 70vh;
+    grid-template-columns: repeat(2, 40vw);
+
+    .places {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(6, 50px);
+        grid-template-rows: repeat(5, 50px);
+        grid-gap: 30px;
+        cursor: pointer;
+
+        .place {
+            border-radius: 50%;
+            background-color: rgb(88, 147, 255);
+            transition: 0.3s;
+            box-shadow: 0 0 50px 0.1px rgba(0, 0, 0, 0.349);
+
+            &:hover {
+                background-color: #ffcc00;
+            }
+        }
+
+        .booked-place {
+            background-color: rgb(255, 82, 82);
+        }
+    }
+
+    .tickets {
+        height: 500px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar-thumb {
+            background-color: rgb(88, 147, 255);
+        }
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        .ticket-cover {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ticket {
+            border-radius: 10px;
+            margin-top: 10px;
+            height: 100px;
+            width: 80%;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.329) inset;
+
+        }
+    }
+
+    @media screen and (max-width:1300px) {
+        & {
+            grid-template-columns: repeat(1, 80vw);
+            background-color: green;
+
+            .ticket {
+                background-color: #ffcc00;
+                width: 100%;
+            }
+        }
+    }
+}

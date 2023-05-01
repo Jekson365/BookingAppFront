@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useEffect, useState } from 'react'
 import 'swiper/css';
-
+import axios from 'axios';
 
 
 export const PopularMovies = () => {
@@ -66,6 +67,7 @@ export const PopularMovies = () => {
             img: "https://static.tkt.ge/img/8ec08a56-169d-473c-9b6a-ccb44c594e8d.jpeg"
         }
     ]
+    
     return (
         <>
 

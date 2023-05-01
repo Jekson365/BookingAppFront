@@ -6,14 +6,16 @@ import { Navbar } from './components/Navbar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { Movie } from './pages/movie/Movie'
+import { Booking } from './pages/Booking/Booking'
 
-function App () {
+function App() {
 
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path='/movies' element={<Movie />} />
+          <Route path='/booking' element={<Booking />} />
         </Routes>
       </BrowserRouter>
       <Navbar />
