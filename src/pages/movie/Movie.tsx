@@ -6,6 +6,17 @@ import axios from 'axios'
 import { useState } from 'react'
 import { PopularMovies } from './PopularMovies'
 
+
+export type EachMovieType = {
+    genre: string,
+    date: string,
+    description: string,
+    id: number,
+    img: string,
+    name: string,
+    roles: string
+}
+
 export const Movie = () => {
 
     // const Movies = [
@@ -70,7 +81,7 @@ export const Movie = () => {
     //         img: "https://static.tkt.ge/img/8ec08a56-169d-473c-9b6a-ccb44c594e8d.jpeg"
     //     }
     // ]
-    const [movies, setMovies] = useState<Object[]>([])
+    const [movies, setMovies] = useState<EachMovieType[]>([])
     const getMovies = async () => {
 
         axios.get("http://localhost:8080/movie")
@@ -83,14 +94,14 @@ export const Movie = () => {
     }, [])
 
 
-    const [detailed, setDetatild] = useState<object>()
+    const [detailed, setDetatild] = useState<EachMovieType>()
     const [activeDetailed, setActiveDetailed] = useState<boolean>(false)
 
 
     const deActive = () => {
         setActiveDetailed(false)
     }
-    const detailedMovie = (detailedMovie: Object) => {
+    const detailedMovie = (detailedMovie: EachMovieType) => {
         setDetatild(detailedMovie)
         setActiveDetailed(true)
     }

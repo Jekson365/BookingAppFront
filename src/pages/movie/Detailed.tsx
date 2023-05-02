@@ -9,7 +9,10 @@ type props = {
 }
 
 export const Detailed: FC<props> = ({ detMovie, deActive, activeStatus }) => {
-
+  const rediRect = (loc: string) => {
+    window.location.href = `/booking/${loc.toString()}`
+    console.log(loc)
+  }
   return (
     <>
       <div
@@ -28,7 +31,7 @@ export const Detailed: FC<props> = ({ detMovie, deActive, activeStatus }) => {
           <p>პრემიერა: <span className='val'>{detMovie?.date}</span></p>
         </div>
         <div className="actions-buttons">
-          <button>დაჯავშნა</button>
+          <button onClick={() => rediRect(detMovie?.id)}>დაჯავშნა</button>
         </div>
       </div>
     </>

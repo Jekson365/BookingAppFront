@@ -1,9 +1,11 @@
+import { useLocation } from "react-router-dom"
+
+
 
 export const EachMovie = (data: any) => {
   return (
     <>
       <div className="box">
-        <button className="book">დაჯავშნა</button>
         <div className="image-cover"
           style={{ "backgroundImage": `url('${data.data.img}')` }}
         >

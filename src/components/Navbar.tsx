@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { MdArrowForwardIos } from 'react-icons/md'
 
 export const Navbar = () => {
-    const [bar, setBar] = useState(false);
+    const [bar, setBar] = useState(true);
 
     return (
         <>
