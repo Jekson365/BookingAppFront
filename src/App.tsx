@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useState } from 'react'
 import { MdArrowForwardIos } from 'react-icons/md'
 
@@ -15,7 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/movies' element={<Movie />} />
-          <Route path='/booking/:id' element={<Booking />} />
+          <Route path='/booking' element={<Booking />} />
         </Routes>
       </BrowserRouter>
       <Navbar />

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import '../styles/navbar.scss'
 import { useState } from 'react'
 import { MdArrowForwardIos } from 'react-icons/md'

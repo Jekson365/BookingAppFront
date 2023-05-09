@@ -14,7 +14,8 @@ export type EachMovieType = {
     id: number,
     img: string,
     name: string,
-    roles: string
+    roles: string,
+    time: String[]
 }
 
 export const Movie = () => {
