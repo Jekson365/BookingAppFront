@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react'
+import { Ticketcomp } from './bookComps/Ticketcomp'
 
 type Props = {}
 
@@ -9,6 +10,7 @@ type EachPlace = {
 }
 
 export default function Tickets({ }: Props) {
+    const [slideTicket, setSlideTicket] = useState<boolean>(false)
     const [hall, setHall] = useState<EachPlace[]>([
         { placeId: 1, placeName: 'palce 1' },
         { placeId: 2, placeName: 'palce 2' },
@@ -45,6 +47,7 @@ export default function Tickets({ }: Props) {
     const places: Array<EachPlace> = []
     return (
         <div className="col col-2">
+            <div className="ticket-count" onClick={() => setSlideTicket(!slideTicket)}><p>შეძენილი ბილეთები</p></div>
             <div className="hall">
                 <div className="places">
                     {hall && hall.map((each: EachPlace) => {
@@ -56,25 +59,10 @@ export default function Tickets({ }: Props) {
                     })}
                 </div>
             </div>
-            <div className="tickets">
-                <div className="amount">
-                    <div className="price">ფასი : 38$</div>
-                    <div className="raod">რაოდენობა : 20</div>
-                </div>
-                <div className="ticket">
-                    <div className="ticket-component"></div>
-                    <div className="ticket-component"></div>
-                    <div className="ticket-component"></div>
-                    <div className="ticket-component"></div>
-                    <div className="ticket-component"></div>
-                    <div className="ticket-component"></div>
-                    <div className="ticket-component"></div>
-                </div>
-                <div className="addition-buttons">
-                    <button className='dec'>გაუქმება</button>
-                    <button>გადახდა</button>
-                </div>
-            </div>
+            <Ticketcomp
+                slideTicket={slideTicket}
+                setSlideTicket={setSlideTicket}
+            />
         </div>
     )
 }
